@@ -4,10 +4,11 @@ from pathlib import Path
 from typing import IO, Callable
 
 from talon import resource
+from talon_init import TALON_HOME
 
 # NOTE: This method requires this module to be one folder below the top-level
 #   community folder.
-SETTINGS_DIR = Path(__file__).parents[1] / "settings"
+SETTINGS_DIR = TALON_HOME / "user" / "settings"
 SETTINGS_DIR.mkdir(exist_ok=True)
 
 CallbackT = Callable[[dict[str, str]], None]
